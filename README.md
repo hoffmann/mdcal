@@ -62,19 +62,41 @@ The repository includes a GitHub Action that automatically generates calendar fi
 - **On every commit** to markdown files or mdcal.py
 - **Daily at midnight UTC**
 - **Manual trigger** via workflow_dispatch
+- **Automatic deployment** to GitHub Pages
 
-Generated files (.html and .ics) are automatically committed back to the repository.
+Generated files (.html and .ics) are automatically committed and deployed to GitHub Pages.
 
 #### Setup
 
-1. Push the `.github/workflows/generate-calendar.yml` file to your repository
-2. Ensure mdcal.py is in the repository root
-3. Add your markdown event files to the repository
+1. **Enable GitHub Pages in your repository:**
+   - Go to your repository on GitHub
+   - Navigate to **Settings** → **Pages**
+   - Under "Build and deployment"
+   - Set **Source** to "GitHub Actions"
+   - Click **Save**
+
+2. **Push the workflow and files:**
+   ```bash
+   git add .github/workflows/generate-calendar.yml
+   git add mdcal.py
+   git commit -m "Add calendar generator with GitHub Pages deployment"
+   git push origin main
+   ```
+
+3. **Add your markdown event files to the repository**
    - **Important**: The actual markdown files must be committed to the repository
    - Symlinks will not work in GitHub Actions (they work locally though)
-4. The action will run automatically on push or daily
 
-The workflow excludes common documentation files (README.md, LICENSE.md, etc.) from processing and properly handles filenames with spaces or special characters.
+4. **Access your calendars:**
+   - After the action runs, visit: `https://[your-username].github.io/[repository-name]/`
+   - You'll see an index page listing all your calendars
+   - Each calendar can be viewed online or downloaded as an iCal file
+
+The workflow:
+- Excludes common documentation files (README.md, LICENSE.md, etc.)
+- Properly handles filenames with spaces or special characters
+- Generates an index.html page listing all calendars
+- Deploys everything to GitHub Pages automatically
 
 ## HTML Features
 
