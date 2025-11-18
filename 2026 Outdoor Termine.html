@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 Outdoor Termine</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        h1 {
+            color: #2c3e50;
+            margin: 0;
+            flex: 1;
+        }
+        .download-link {
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 500;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            transition: background 0.3s;
+            white-space: nowrap;
+        }
+        .download-link:hover {
+            background: #2980b9;
+        }
+        .event {
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .event-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 0 0 10px 0;
+        }
+        .event-date-tags {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 5px 0;
+        }
+        .event-date {
+            color: #7f8c8d;
+            font-size: 0.95em;
+        }
+        .event-description {
+            margin: 10px 0;
+            color: #555;
+        }
+        .event-link {
+            margin: 10px 0;
+        }
+        .event-link a {
+            color: #3498db;
+            text-decoration: none;
+            word-break: break-all;
+        }
+        .event-link a:hover {
+            text-decoration: underline;
+        }
+        .event-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .tag {
+            background: #e8f4f8;
+            color: #2980b9;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+        .tag:hover {
+            background: #d0e9f2;
+        }
+        .tag-filter-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .filter-tag {
+            background: #e8f4f8;
+            color: #2980b9;
+            padding: 6px 14px;
+            border-radius: 12px;
+            font-size: 0.9em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+        .filter-tag:hover {
+            background: #d0e9f2;
+        }
+        .filter-tag.active {
+            background: #3498db;
+            color: white;
+        }
+        .event.hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>2026 Outdoor Termine</h1>
+        <a href="2026 Outdoor Termine.ics" class="download-link" download>📅 Download iCal</a>
+    </div>
+    <div class="tag-filter-section">
+        <span class="filter-tag" data-tag="ski" onclick="filterByTag('ski')">#ski</span>
+        <span class="filter-tag" data-tag="trailrun" onclick="filterByTag('trailrun')">#trailrun</span>
+    </div>
+    <div class="event" data-tags="ski">
+        <div class="event-title">Jennerstier</div>
+        <div class="event-date-tags">
+            <span class="event-date">📅 06.02.2026 - 08.02.2026</span>
+            <div class="event-tags">
+                <span class="tag" onclick="filterByTag('ski')">#ski</span>
+            </div>
+        </div>
+        <div class="event-description">Berchtesgaden incl. Deutsche Meisterschaften Skimo</div>
+        <div class="event-link">🔗 <a href="https://www.jennerstier.de/info/Zeitplan" target="_blank">https://www.jennerstier.de/info/Zeitplan</a></div>
+    </div>
+    <div class="event" data-tags="ski">
+        <div class="event-title">Patroullie de Glaciers</div>
+        <div class="event-date-tags">
+            <span class="event-date">📅 14.04.2026 - 18.04.2026</span>
+            <div class="event-tags">
+                <span class="tag" onclick="filterByTag('ski')">#ski</span>
+            </div>
+        </div>
+
+        <div class="event-link">🔗 <a href="https://www.mso.swiss/de/events/2378-patrouille-des-glaciers" target="_blank">https://www.mso.swiss/de/events/2378-patrouille-des-glaciers</a></div>
+    </div>
+    <div class="event" data-tags="trailrun">
+        <div class="event-title">Mountainman Nesselwang</div>
+        <div class="event-date-tags">
+            <span class="event-date">📅 09.05.2026</span>
+            <div class="event-tags">
+                <span class="tag" onclick="filterByTag('trailrun')">#trailrun</span>
+            </div>
+        </div>
+
+        <div class="event-link">🔗 <a href="https://mountainman.de/trailrunning-events/alps/nesselwang/deutsche-meisterschaft-im-ultratrail-2026/" target="_blank">https://mountainman.de/trailrunning-events/alps/nesselwang/deutsche-meisterschaft-im-ultratrail-2026/</a></div>
+    </div>
+    <div class="event" data-tags="trailrun">
+        <div class="event-title">Lowa Trail Tropy</div>
+        <div class="event-date-tags">
+            <span class="event-date">📅 14.05.2026 - 17.05.2026</span>
+            <div class="event-tags">
+                <span class="tag" onclick="filterByTag('trailrun')">#trailrun</span>
+            </div>
+        </div>
+        <div class="event-description">Trailrunning Etappen Rennen mit Start in Pfronten.</div>
+        <div class="event-link">🔗 <a href="https://www.trail-trophy.com" target="_blank">https://www.trail-trophy.com</a></div>
+    </div>
+    <div class="event" data-tags="trailrun">
+        <div class="event-title">Lowa Ultra Trail Fränkische Schweiz</div>
+        <div class="event-date-tags">
+            <span class="event-date">📅 25.05.2026</span>
+            <div class="event-tags">
+                <span class="tag" onclick="filterByTag('trailrun')">#trailrun</span>
+            </div>
+        </div>
+
+        <div class="event-link">🔗 <a href="https://www.ultratrail-fraenkische-schweiz.de" target="_blank">https://www.ultratrail-fraenkische-schweiz.de</a></div>
+    </div>
+    <div class="event" data-tags="trailrun">
+        <div class="event-title">Zugspitz Ultra Trail</div>
+        <div class="event-date-tags">
+            <span class="event-date">📅 18.06.2026 - 20.06.2026</span>
+            <div class="event-tags">
+                <span class="tag" onclick="filterByTag('trailrun')">#trailrun</span>
+            </div>
+        </div>
+
+        <div class="event-link">🔗 <a href="https://eiger.utmb.world/de/races" target="_blank">https://eiger.utmb.world/de/races</a></div>
+    </div>
+    <div class="event" data-tags="trailrun">
+        <div class="event-title">Eiger Trail</div>
+        <div class="event-date-tags">
+            <span class="event-date">📅 15.07.2026 - 19.07.2026</span>
+            <div class="event-tags">
+                <span class="tag" onclick="filterByTag('trailrun')">#trailrun</span>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="event" data-tags="trailrun">
+        <div class="event-title">Sierre-Zinal</div>
+        <div class="event-date-tags">
+            <span class="event-date">📅 08.08.2026</span>
+            <div class="event-tags">
+                <span class="tag" onclick="filterByTag('trailrun')">#trailrun</span>
+            </div>
+        </div>
+
+        <div class="event-link">🔗 <a href="https://www.sierre-zinal.com" target="_blank">https://www.sierre-zinal.com</a></div>
+    </div>
+    <div class="event" data-tags="trailrun">
+        <div class="event-title">Panorama Marathon</div>
+        <div class="event-date-tags">
+            <span class="event-date">📅 09.08.2026</span>
+            <div class="event-tags">
+                <span class="tag" onclick="filterByTag('trailrun')">#trailrun</span>
+            </div>
+        </div>
+        <div class="event-description">Sonthofen. Mit der Strecke Hörnerlauf (18km, 1111hm)</div>
+        <div class="event-link">🔗 <a href="https://www.allgaeu-panorama-marathon.de" target="_blank">https://www.allgaeu-panorama-marathon.de</a></div>
+    </div>
+    <div class="event" data-tags="trailrun">
+        <div class="event-title">UTMB Mont Blanc</div>
+        <div class="event-date-tags">
+            <span class="event-date">📅 24.08.2026 - 30.08.2026</span>
+            <div class="event-tags">
+                <span class="tag" onclick="filterByTag('trailrun')">#trailrun</span>
+            </div>
+        </div>
+
+        <div class="event-link">🔗 <a href="https://montblanc.utmb.world/races/utmb" target="_blank">https://montblanc.utmb.world/races/utmb</a></div>
+    </div>
+    <div class="event" data-tags="trailrun">
+        <div class="event-title">Wildstrubel by Utmb</div>
+        <div class="event-date-tags">
+            <span class="event-date">📅 11.09.2026 - 13.09.2026</span>
+            <div class="event-tags">
+                <span class="tag" onclick="filterByTag('trailrun')">#trailrun</span>
+            </div>
+        </div>
+
+        <div class="event-link">🔗 <a href="https://wildstrubel.utmb.world/" target="_blank">https://wildstrubel.utmb.world/</a></div>
+    </div>
+    <script>
+        let currentFilter = null;
+
+        function filterByTag(tag) {
+            // If clicking on the already active tag, deselect it
+            if (currentFilter === tag) {
+                clearFilter();
+                return;
+            }
+
+            currentFilter = tag;
+            const events = document.querySelectorAll('.event');
+
+            events.forEach(event => {
+                const tags = event.getAttribute('data-tags');
+                if (tags && tags.split(',').includes(tag)) {
+                    event.classList.remove('hidden');
+                } else {
+                    event.classList.add('hidden');
+                }
+            });
+
+            // Update active state of filter tags
+            document.querySelectorAll('.filter-tag').forEach(filterTag => {
+                if (filterTag.getAttribute('data-tag') === tag) {
+                    filterTag.classList.add('active');
+                } else {
+                    filterTag.classList.remove('active');
+                }
+            });
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function clearFilter() {
+            currentFilter = null;
+            const events = document.querySelectorAll('.event');
+
+            events.forEach(event => {
+                event.classList.remove('hidden');
+            });
+
+            // Remove active state from all filter tags
+            document.querySelectorAll('.filter-tag').forEach(filterTag => {
+                filterTag.classList.remove('active');
+            });
+        }
+    </script>
+</body>
+</html>
