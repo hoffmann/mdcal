@@ -30,11 +30,14 @@ jobs:
       - name: Generate calendar files
         run: |
           # Find all markdown files (excluding README and other common docs)
-          find . -name "*.md" -not -path "./node_modules/*" -not -path "./.git/*" \
-            -not -name "README.md" -not -name "LICENSE.md" -not -name "CONTRIBUTING.md" | while read -r mdfile; do
-            echo "Processing: $mdfile"
-            python3 mdcal.py "$mdfile"
-          done
+          # Note: Removed -type f to support both regular files and symlinks
+          find . -name "*.md" \
+            -not -path "./node_modules/*" \
+            -not -path "./.git/*" \
+            -not -name "README.md" \
+            -not -name "LICENSE.md" \
+            -not -name "CONTRIBUTING.md" \
+            -exec sh -c 'echo "Processing: $1"; python3 mdcal.py "$1" || echo "Failed: $1"' sh {} \;
 
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v5
