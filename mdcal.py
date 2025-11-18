@@ -455,12 +455,140 @@ def escape_html(text):
     return text
 
 
+def generate_index(output_path='index.html', exclude_readme=True):
+    """Generate an index.html page listing all calendar HTML files"""
+    import os
+
+    # Find all generated HTML files
+    html_files = sorted([
+        f for f in os.listdir('.')
+        if f.endswith('.html') and f != 'index.html'
+    ])
+
+    if exclude_readme:
+        html_files = [f for f in html_files if not f.lower().startswith('readme')]
+
+    # Generate index page
+    html = f'''<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Calendars</title>
+    <style>
+        body {{
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            line-height: 1.6;
+            color: #333;
+        }}
+        h1 {{
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }}
+        .calendar-list {{
+            list-style: none;
+            padding: 0;
+        }}
+        .calendar-item {{
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }}
+        .calendar-name {{
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }}
+        .calendar-links {{
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }}
+        .calendar-link {{
+            color: #3498db;
+            text-decoration: none;
+            padding: 8px 16px;
+            border: 2px solid #3498db;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }}
+        .calendar-link:hover {{
+            background: #3498db;
+            color: white;
+        }}
+        .calendar-link.ics {{
+            color: #27ae60;
+            border-color: #27ae60;
+        }}
+        .calendar-link.ics:hover {{
+            background: #27ae60;
+            color: white;
+        }}
+        .footer {{
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            color: #7f8c8d;
+            font-size: 0.9em;
+            text-align: center;
+        }}
+    </style>
+</head>
+<body>
+    <h1>📅 Event Calendars</h1>
+    <ul class="calendar-list">
+'''
+
+    for html_file in html_files:
+        # Get base name without extension
+        base_name = Path(html_file).stem
+        ics_file = base_name + '.ics'
+
+        html += f'''
+        <li class="calendar-item">
+            <div class="calendar-name">{escape_html(base_name)}</div>
+            <div class="calendar-links">
+                <a href="{escape_html(html_file)}" class="calendar-link">📄 View Calendar</a>
+'''
+
+        # Only add iCal link if file exists
+        if os.path.exists(ics_file):
+            html += f'                <a href="{escape_html(ics_file)}" class="calendar-link ics" download>📥 Download iCal</a>\n'
+
+        html += '''            </div>
+        </li>
+'''
+
+    html += '''
+    </ul>
+    <div class="footer">
+        Generated automatically by mdcal
+    </div>
+</body>
+</html>
+'''
+
+    with open(output_path, 'w', encoding='utf-8') as f:
+        f.write(html)
+
+    return len(html_files)
+
+
 def main():
     parser = argparse.ArgumentParser(
         description='Parse markdown events and generate iCal and HTML outputs'
     )
     parser.add_argument(
         'input',
+        nargs='?',
         help='Input markdown file'
     )
     parser.add_argument(
@@ -478,8 +606,24 @@ def main():
         action='store_true',
         help='Generate only HTML output'
     )
+    parser.add_argument(
+        '--generate-index',
+        action='store_true',
+        help='Generate an index.html page listing all calendars (no input file needed)'
+    )
 
     args = parser.parse_args()
+
+    # Handle index generation
+    if args.generate_index:
+        print("Generating index page...")
+        count = generate_index()
+        print(f"✓ Index page created with {count} calendar(s)")
+        return
+
+    # Check if input file is provided
+    if not args.input:
+        parser.error("Input markdown file is required (unless using --generate-index)")
 
     # Determine output base name and calendar title
     input_path = Path(args.input)

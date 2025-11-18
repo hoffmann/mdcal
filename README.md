@@ -53,6 +53,9 @@ python3 mdcal.py "events.md" --ical-only
 
 # Generate only HTML
 python3 mdcal.py "events.md" --html-only
+
+# Generate an index page listing all calendars
+python3 mdcal.py --generate-index
 ```
 
 ### GitHub Actions

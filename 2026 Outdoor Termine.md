@@ -1,3 +1,13 @@
+# Mittag-Race: Skibergsteigen
+03.01.2026 - 04.01.2026
+#ski
+
+Das Mittag-Race findet 2026 am Sonntag, den 4. Januar statt und wird wieder
+Deutsche Meisterschaft im Vertical! Zudem richten wir auf unserem Hausberg, dem
+Mittag auch die Deutsche Meisterschaft im Sprint am Samstag, den 3. Januar aus.
+
+http://www.sc-immenstadt.de/skibergsteigen/mittag-race-skibergsteigen-vertical/
+
 # Jennerstier
 06.02.2026 - 08.02.2026
 #ski
@@ -5,6 +15,12 @@
 Berchtesgaden incl. Deutsche Meisterschaften Skimo
 
 https://www.jennerstier.de/info/Zeitplan
+
+# Sellaronda Ski Marathon
+20.03.2026
+#ski
+
+https://www.sellaronda.it/de/
 
 # Patroullie de Glaciers
 14.04.2026 - 18.04.2026
