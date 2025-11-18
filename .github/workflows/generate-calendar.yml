@@ -1,0 +1,46 @@
+name: Generate Calendar Files
+
+on:
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - '**.md'
+      - 'mdcal.py'
+      - '.github/workflows/generate-calendar.yml'
+  schedule:
+    # Run daily at 00:00 UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Allow manual triggering
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Generate calendar files
+        run: |
+          # Find all markdown files (excluding README and other common docs)
+          find . -name "*.md" -not -path "./node_modules/*" -not -path "./.git/*" \
+            -not -name "README.md" -not -name "LICENSE.md" -not -name "CONTRIBUTING.md" | while read -r mdfile; do
+            echo "Processing: $mdfile"
+            python3 mdcal.py "$mdfile"
+          done
+
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "🤖 Auto-generate calendar files"
+          file_pattern: '*.html *.ics'
+          commit_user_name: GitHub Actions Bot
+          commit_user_email: actions@github.com
+          commit_author: GitHub Actions Bot <actions@github.com>
