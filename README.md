@@ -120,7 +120,7 @@ The generated iCal files include:
 
 ## Example
 
-See `2026 Outdoor Termine.md` for an example event file.
+See `2026 Outdoor Termine.md` for an example event file. The results can be viewed at <https://hoffmann.github.io/mdcal/>
 
 ## Requirements
 
