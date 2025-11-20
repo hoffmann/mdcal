@@ -11,7 +11,7 @@ SUMMARY:Mittag-Race: Skibergsteigen
 CATEGORIES:ski
 DESCRIPTION:Das Mittag-Race findet 2026 am Sonntag\, den 4. Januar statt und wird wieder\nDeutsche Meisterschaft im Vertical! Zudem richten wir auf unserem Hausberg\, dem\nMittag auch die Deutsche Meisterschaft im Sprint am Samstag\, den 3. Januar aus.\\nLink: http://www.sc-immenstadt.de/skibergsteigen/mittag-race-skibergsteigen-vertical/
 URL:http://www.sc-immenstadt.de/skibergsteigen/mittag-race-skibergsteigen-vertical/
-DTSTAMP:20251119T003124Z
+DTSTAMP:20251120T003039Z
 END:VEVENT
 BEGIN:VEVENT
 UID:20260206-Jennerstier@mdcal
@@ -21,7 +21,7 @@ SUMMARY:Jennerstier
 CATEGORIES:ski
 DESCRIPTION:Berchtesgaden incl. Deutsche Meisterschaften Skimo\\nLink: https://www.jennerstier.de/info/Zeitplan
 URL:https://www.jennerstier.de/info/Zeitplan
-DTSTAMP:20251119T003124Z
+DTSTAMP:20251120T003039Z
 END:VEVENT
 BEGIN:VEVENT
 UID:20260320-Sellaronda-Ski-Marathon@mdcal
@@ -31,7 +31,7 @@ SUMMARY:Sellaronda Ski Marathon
 CATEGORIES:ski
 DESCRIPTION:Link: https://www.sellaronda.it/de/
 URL:https://www.sellaronda.it/de/
-DTSTAMP:20251119T003124Z
+DTSTAMP:20251120T003039Z
 END:VEVENT
 BEGIN:VEVENT
 UID:20260414-Patroullie-de-Glaciers@mdcal
@@ -41,7 +41,7 @@ SUMMARY:Patroullie de Glaciers
 CATEGORIES:ski
 DESCRIPTION:Link: https://www.mso.swiss/de/events/2378-patrouille-des-glaciers
 URL:https://www.mso.swiss/de/events/2378-patrouille-des-glaciers
-DTSTAMP:20251119T003124Z
+DTSTAMP:20251120T003039Z
 END:VEVENT
 BEGIN:VEVENT
 UID:20260509-Mountainman-Nesselwang@mdcal
@@ -51,7 +51,7 @@ SUMMARY:Mountainman Nesselwang
 CATEGORIES:trailrun
 DESCRIPTION:Link: https://mountainman.de/trailrunning-events/alps/nesselwang/deutsche-meisterschaft-im-ultratrail-2026/
 URL:https://mountainman.de/trailrunning-events/alps/nesselwang/deutsche-meisterschaft-im-ultratrail-2026/
-DTSTAMP:20251119T003124Z
+DTSTAMP:20251120T003039Z
 END:VEVENT
 BEGIN:VEVENT
 UID:20260514-Lowa-Trail-Tropy@mdcal
@@ -61,7 +61,7 @@ SUMMARY:Lowa Trail Tropy
 CATEGORIES:trailrun
 DESCRIPTION:Trailrunning Etappen Rennen mit Start in Pfronten.\\nLink: https://www.trail-trophy.com
 URL:https://www.trail-trophy.com
-DTSTAMP:20251119T003124Z
+DTSTAMP:20251120T003039Z
 END:VEVENT
 BEGIN:VEVENT
 UID:20260525-Lowa-Ultra-Trail-Fränkische-Schweiz@mdcal
@@ -71,7 +71,7 @@ SUMMARY:Lowa Ultra Trail Fränkische Schweiz
 CATEGORIES:trailrun
 DESCRIPTION:Link: https://www.ultratrail-fraenkische-schweiz.de
 URL:https://www.ultratrail-fraenkische-schweiz.de
-DTSTAMP:20251119T003124Z
+DTSTAMP:20251120T003039Z
 END:VEVENT
 BEGIN:VEVENT
 UID:20260618-Zugspitz-Ultra-Trail@mdcal
@@ -81,7 +81,7 @@ SUMMARY:Zugspitz Ultra Trail
 CATEGORIES:trailrun
 DESCRIPTION:Link: https://eiger.utmb.world/de/races
 URL:https://eiger.utmb.world/de/races
-DTSTAMP:20251119T003124Z
+DTSTAMP:20251120T003039Z
 END:VEVENT
 BEGIN:VEVENT
 UID:20260715-Eiger-Trail@mdcal
@@ -89,7 +89,7 @@ DTSTART;VALUE=DATE:20260715
 DTEND;VALUE=DATE:20260720
 SUMMARY:Eiger Trail
 CATEGORIES:trailrun
-DTSTAMP:20251119T003124Z
+DTSTAMP:20251120T003039Z
 END:VEVENT
 BEGIN:VEVENT
 UID:20260808-Sierre-Zinal@mdcal
@@ -99,7 +99,7 @@ SUMMARY:Sierre-Zinal
 CATEGORIES:trailrun
 DESCRIPTION:Link: https://www.sierre-zinal.com
 URL:https://www.sierre-zinal.com
-DTSTAMP:20251119T003124Z
+DTSTAMP:20251120T003039Z
 END:VEVENT
 BEGIN:VEVENT
 UID:20260809-Panorama-Marathon@mdcal
@@ -109,7 +109,7 @@ SUMMARY:Panorama Marathon
 CATEGORIES:trailrun
 DESCRIPTION:Sonthofen. Mit der Strecke Hörnerlauf (18km\, 1111hm)\\nLink: https://www.allgaeu-panorama-marathon.de
 URL:https://www.allgaeu-panorama-marathon.de
-DTSTAMP:20251119T003124Z
+DTSTAMP:20251120T003039Z
 END:VEVENT
 BEGIN:VEVENT
 UID:20260824-UTMB-Mont-Blanc@mdcal
@@ -119,7 +119,7 @@ SUMMARY:UTMB Mont Blanc
 CATEGORIES:trailrun
 DESCRIPTION:Link: https://montblanc.utmb.world/races/utmb
 URL:https://montblanc.utmb.world/races/utmb
-DTSTAMP:20251119T003124Z
+DTSTAMP:20251120T003039Z
 END:VEVENT
 BEGIN:VEVENT
 UID:20260911-Wildstrubel-by-Utmb@mdcal
@@ -129,6 +129,6 @@ SUMMARY:Wildstrubel by Utmb
 CATEGORIES:trailrun
 DESCRIPTION:Link: https://wildstrubel.utmb.world/
 URL:https://wildstrubel.utmb.world/
-DTSTAMP:20251119T003124Z
+DTSTAMP:20251120T003039Z
 END:VEVENT
 END:VCALENDAR
